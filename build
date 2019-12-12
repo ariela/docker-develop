@@ -38,6 +38,7 @@ build_image php-7.4-cli ./php/7.4/cli
 build_image php-7.4-cli-dev ./php/7.4/cli-dev
 build_image php-7.4-fpm ./php/7.4/fpm
 build_image php-7.4-fpm-dev ./php/7.4/fpm-dev
+build_image php-7.4-inspection ./php/7.4/inspection
 build_image maildev-1.1.0 ./maildev/1.1.0
 
 cd ${PREVIOUS_DIR}

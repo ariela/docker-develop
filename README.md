@@ -7,13 +7,14 @@ https://hub.docker.com/r/arielase/develop
 ## 一覧
 | イメージ名 | 備考 |
 |----------|-----|
-| arielase/develop:nginx-1.17       | nginx 1.17 |
-| arielase/develop:php-7.4-cli      | CLI版 PHP7.4 |
-| arielase/develop:php-7.4-cli-dev  | CLI版 PHP7.4 (xdebug込み) |
-| arielase/develop:php-7.4-fpm      | FPM版 PHP7.4 |
-| arielase/develop:php-7.4-fpm-dev  | FPM版 PHP7.4 (xdebug込み) |
-| arielase/develop:php-7.4-xdebug   | PHP7.4用 xdebugモジュール |
-| arielase/develop:maildev-1.1.0    | SMTPテスト用 |
+| arielase/develop:nginx-1.17           | nginx 1.17 |
+| arielase/develop:php-7.4-cli          | CLI版 PHP7.4 |
+| arielase/develop:php-7.4-cli-dev      | CLI版 PHP7.4 (xdebug込み) |
+| arielase/develop:php-7.4-fpm          | FPM版 PHP7.4 |
+| arielase/develop:php-7.4-fpm-dev      | FPM版 PHP7.4 (xdebug込み) |
+| arielase/develop:php-7.4-xdebug       | PHP7.4用 xdebugモジュール |
+| arielase/develop:php-7.4-inspection   | PHP7.4 検査用 |
+| arielase/develop:maildev-1.1.0        | SMTPテスト用 |
 
 ## xdebugモジュール
 モジュールビルドのみ実行しているイメージとなる。
