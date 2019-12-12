@@ -1,0 +1,43 @@
+#!/bin/bash
+
+PREVIOUS_DIR=$(pwd)
+CURRENTS_DIR=$(cd $(dirname $0); pwd)
+
+DOCKER_USER=arielase
+NAMESPACE=${DOCKER_USER}/develop
+
+export DOCKER_BUILDKIT=1
+
+build_image() {
+    TAG=${1:-latest}
+    CONTEXT=${2:-.}
+    DOCKERFILE=${3:-Dockerfile}
+
+    docker build -t ${NAMESPACE}:${TAG} -f ${CONTEXT}/${DOCKERFILE} ${CONTEXT}
+    if [ $? -ne 0 ]; then
+        exit 1
+    fi
+
+    docker push ${NAMESPACE}:${TAG}
+    if [ $? -ne 0 ]; then
+        exit 1
+    fi
+}
+
+
+cd ${CURRENTS_DIR}
+
+docker login -u ${DOCKER_USER}
+if [ $? -ne 0 ]; then
+    exit 1
+fi
+
+build_image nginx-1.17 ./nginx/1.17
+build_image php-7.4-xdebug ./php/7.4/xdebug
+build_image php-7.4-cli ./php/7.4/cli
+build_image php-7.4-cli-dev ./php/7.4/cli-dev
+build_image php-7.4-fpm ./php/7.4/fpm
+build_image php-7.4-fpm-dev ./php/7.4/fpm-dev
+build_image maildev-1.1.0 ./maildev/1.1.0
+
+cd ${PREVIOUS_DIR}
